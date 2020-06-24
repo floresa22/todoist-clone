@@ -1,8 +1,9 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+require("dotenv").config();
 
 const firebaseConfig = firebase.initializeApp({
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "todoist-clone-a99e7.firebaseapp.com",
   databaseURL: "https://todoist-clone-a99e7.firebaseio.com",
   projectId: "todoist-clone-a99e7",
