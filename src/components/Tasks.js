@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Checkbox } from "./Checkbox";
 import { useTasks } from "../hooks";
 import { collatedTasks } from "../constants";
@@ -7,8 +7,8 @@ import { useSelectedProjectValue, useProjectsValue } from "../context";
 
 export const Tasks = () => {
   const { selectedProject } = useSelectedProjectValue();
-  const { tasks } = useTasks(selectedProject);
   const { projects } = useProjectsValue();
+  const { tasks } = useTasks(selectedProject);
 
   let projectName = "";
 
@@ -23,6 +23,9 @@ export const Tasks = () => {
   useEffect(() => {
     document.title = `${projectName}: Todoist`;
   });
+
+  console.log("tasks", tasks);
+  console.log(projectName, "project name");
 
   return (
     <div className="tasks" data-testid="tasks">
