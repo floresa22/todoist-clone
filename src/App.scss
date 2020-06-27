@@ -431,24 +431,26 @@ header {
 
   &__inner {
     @include box-overlay();
-    z-index: 10;
-    width: 200px;
-    padding: 10px;
-    top: 10px;
+    z-index: 99;
+    width: 100px;
+    padding: none;
+    top: 5px;
     right: 0;
+    // left: 0;
     background-color: white;
-    position: relative;
+    position: sticky;
 
     p {
       margin-top: 5px;
-      margin-bottom: 5px;
+      margin-right: 5px;
       line-height: normal;
       font-weight: normal;
-      font-size: 15px;
+      font-size: 12px;
+      position: sticky;
     }
 
     button {
-      @include btn("50px");
+      @include btn("40px");
     }
     span {
       @include cancel();
@@ -660,26 +662,26 @@ header {
     @include task-item();
     padding: 0;
 
-    div:nth-child(1) {
-      padding: 10px;
-      width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
+    // div:nth-child(1) {
+    //   padding: 10px;
+    //   width: 100%;
+    //   display: -webkit-box;
+    //   display: -ms-flexbox;
+    //   display: flex;
+    //   -webkit-box-align: center;
+    //   -ms-flex-align: center;
+    //   align-items: center;
 
-      span:first-of-type {
-        margin-right: 10px;
+    span:first-of-type {
+      margin-right: 10px;
 
-        svg {
-          fill: grey;
-        }
+      svg {
+        fill: grey;
       }
     }
   }
 }
+// }
 
 /* Project Overlay
   ============================================ */
