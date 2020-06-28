@@ -63,6 +63,9 @@ export const AddTask = ({
           className="add-task__shallow"
           data-testid="show-main-action"
           onClick={() => setShowMain(!showMain)}
+          onKeyDown={() => setShowMain(!showMain)}
+          tabIndex={0}
+          role="button"
         >
           <span className="add-task__plus">+</span>
           <span className="add-task__text">Add Task</span>
@@ -77,11 +80,19 @@ export const AddTask = ({
                 <span
                   className="add-task__cancel-x"
                   data-testid="add-task-quick-cancel"
+                  aria-label="Cancel adding task"
                   onClick={() => {
                     setShowMain(false);
                     setShowProjectOverlay(false);
                     setShowQuickAddTask(false);
                   }}
+                  onKeyDown={() => {
+                    setShowMain(false);
+                    setShowProjectOverlay(false);
+                    setShowQuickAddTask(false);
+                  }}
+                  tabIndex={0}
+                  role="button"
                 >
                   X
                 </span>
@@ -100,6 +111,7 @@ export const AddTask = ({
           />
           <input
             className="add-task__content"
+            aria-label="Enter Your Task"
             data-testid="add-task-content"
             type="text"
             value={task}
@@ -121,10 +133,17 @@ export const AddTask = ({
             <span
               className="add-task__cancel"
               data-testid="add-task-main-cancel"
+              aria-label="Cancel adding task"
               onClick={() => {
                 setShowMain(false);
                 setShowProjectOverlay(false);
               }}
+              onKeyPress={() => {
+                setShowMain(false);
+                setShowProjectOverlay(false);
+              }}
+              tabIndex={0}
+              role="button"
             >
               Cancel
             </span>
@@ -133,6 +152,9 @@ export const AddTask = ({
             className="add-task__project"
             data-testid="show-project-overlay"
             onClick={() => setShowProjectOverlay(!showProjectOverlay)}
+            onKeyDown={() => setShowProjectOverlay(!showProjectOverlay)}
+            tabIndex={0}
+            role="button"
           >
             <FaRegListAlt />
           </span>
@@ -140,6 +162,9 @@ export const AddTask = ({
             className="add-task__date"
             data-testi="show-task-date-overlay"
             onClick={() => setShowTaskDate(!showTaskDate)}
+            onKeyDown={() => setShowTaskDate(!showTaskDate)}
+            tabIndex={0}
+            role="button"
           >
             <FaRegCalendarAlt />
           </span>
