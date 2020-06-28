@@ -25,9 +25,6 @@ export const Tasks = () => {
     document.title = `${projectName}: Todoist`;
   });
 
-  console.log("tasks", tasks);
-  console.log(projectName, "project name");
-
   return (
     <div className="tasks" data-testid="tasks">
       <h2 data-test-id="project-name">{projectName}</h2>
