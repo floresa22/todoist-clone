@@ -160,7 +160,7 @@ export const AddTask = ({
           </span>
           <span
             className="add-task__date"
-            data-testi="show-task-date-overlay"
+            data-testid="show-task-date-overlay"
             onClick={() => setShowTaskDate(!showTaskDate)}
             onKeyDown={() => setShowTaskDate(!showTaskDate)}
             tabIndex={0}
