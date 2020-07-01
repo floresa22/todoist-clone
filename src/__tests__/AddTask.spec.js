@@ -217,9 +217,11 @@ describe("<AddTask /> ", () => {
       expect(queryByTestId("add-task-content")).toBeTruthy();
       expect(queryByTestId("add-task-main")).toBeTruthy();
 
+      // The Following event should be wrapped in an act(...) {------
       fireEvent.change(queryByTestId("add-task-content"), {
         target: { value: "New task value" },
       });
+      // --------------- }
       expect(queryByTestId("add-task-content").value).toBe("New task value");
 
       fireEvent.click(queryByTestId("show-task-date-overlay"));
