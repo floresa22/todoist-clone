@@ -15,7 +15,7 @@ jest.mock("../Firebase", () => ({
   firebase: {
     firestore: jest.fn(() => ({
       collection: jest.fn(() => ({
-        add: jest.fn(() => Promise.resolve("Never Mock firebase")),
+        add: jest.fn(() => Promise.resolve("Mock Value")),
       })),
     })),
   },
