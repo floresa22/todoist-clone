@@ -13,7 +13,12 @@ export const Tasks = () => {
 
   let projectName = "";
 
-  if (projects && selectedProject && !getCollatedTasksExist(selectedProject)) {
+  if (
+    projects &&
+    projects.length > 0 &&
+    selectedProject &&
+    !getCollatedTasksExist(selectedProject)
+  ) {
     projectName = getTitle(projects, selectedProject).name;
   }
 
@@ -27,7 +32,7 @@ export const Tasks = () => {
 
   return (
     <div className="tasks" data-testid="tasks">
-      <h2 data-test-id="project-name">{projectName}</h2>
+      <h2 data-testid="project-name">{projectName}</h2>
 
       <ul className="tasks__list">
         {tasks.map((task) => (
