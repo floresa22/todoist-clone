@@ -151,7 +151,7 @@ describe("<AddTask /> ", () => {
       expect(setShowQuickAddTask).toHaveBeenCalled();
     });
 
-    it("renders <AddTask /> and adds a task to the TODAY", () => {
+    it("renders <AddTask /> and adds a task to TODAY", () => {
       useSelectedProjectValue.mockImplementation(() => ({
         selectedProject: "TODAY",
       }));
@@ -205,32 +205,6 @@ describe("<AddTask /> ", () => {
 
       fireEvent.click(queryByTestId("add-task"));
       expect(setShowQuickAddTask).toHaveBeenCalled();
-    });
-
-    it("renders <AddTask /> and adds a task with a task date", () => {
-      useSelectedProjectValue.mockImplementation(() => ({
-        selectedProject: "1",
-      }));
-
-      const { queryByTestId } = render(<AddTask showMain />);
-      fireEvent.click(queryByTestId("show-main-action"));
-      expect(queryByTestId("add-task-content")).toBeTruthy();
-      expect(queryByTestId("add-task-main")).toBeTruthy();
-
-      // The Following event should be wrapped in an act(...) {------
-      fireEvent.change(queryByTestId("add-task-content"), {
-        target: { value: "New task value" },
-      });
-      // --------------- }
-      expect(queryByTestId("add-task-content").value).toBe("New task value");
-
-      fireEvent.click(queryByTestId("show-task-date-overlay"));
-      expect(queryByTestId("task-date-overlay")).toBeTruthy();
-
-      fireEvent.click(queryByTestId("task-date-today"));
-      expect(queryByTestId("task-date-overlay")).toBeFalsy();
-
-      fireEvent.click(queryByTestId("add-task"));
     });
   });
 });
