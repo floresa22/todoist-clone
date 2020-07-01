@@ -138,7 +138,7 @@ export const AddTask = ({
                 setShowMain(false);
                 setShowProjectOverlay(false);
               }}
-              onKeyPress={() => {
+              onKeyDown={() => {
                 setShowMain(false);
                 setShowProjectOverlay(false);
               }}
