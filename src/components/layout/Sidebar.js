@@ -11,7 +11,7 @@ import { AddProject } from "../AddProject";
 
 export const Sidebar = () => {
   const { setSelectedProject } = useSelectedProjectValue();
-  const [active, setActive] = useState("inbox");
+  const [active, setActive] = useState();
   const [showProjects, setShowProjects] = useState(true);
 
   return (
@@ -22,6 +22,7 @@ export const Sidebar = () => {
           className={active === "inbox" ? "active" : undefined}
         >
           <div
+            data-testid="inbox-inner"
             aria-label="Show Inbox Tasks"
             tabIndex={0}
             role="button"
@@ -45,6 +46,7 @@ export const Sidebar = () => {
           className={active === "today" ? "active" : undefined}
         >
           <div
+            data-testid="today-inner"
             aria-label="Show Today's Tasks"
             tabIndex={0}
             role="button"
@@ -68,6 +70,7 @@ export const Sidebar = () => {
           className={active === "next_7" ? "active" : undefined}
         >
           <div
+            data-testid="next_7-inner"
             aria-label="Show Tasks For The Next 7 Days"
             tabIndex={0}
             role="button"
@@ -88,6 +91,7 @@ export const Sidebar = () => {
         </li>
       </ul>
       <div
+        data-testid="toggle-projects-sidebar"
         className="sidebar__middle"
         aria-label="Show/Hide Projects"
         onClick={() => setShowProjects(!showProjects)}
